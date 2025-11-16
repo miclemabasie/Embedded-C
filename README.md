@@ -1,4 +1,4 @@
-# 🚀 Embedded Engineering Journey: ATtiny85 From Scratch
+# Embedded Engineering Journey: ATtiny85 From Scratch
 ## *Bridging the Gap Between Silicon and Software*
 
 This repository is a technical log of my journey into low-level embedded systems. I am focusing on the **AVR 8-bit architecture**, specifically the **ATtiny85**, to understand how **electrons flow through silicon**, how **logic gates are built from transistors**, and how **C code becomes voltage on a pin**.
