@@ -168,6 +168,43 @@ int isPrime(int n)
 Input two numbers, output their GCD.
 Use Euclidean algorithm.
 
+```c
+#include <iostream>
+
+using namespace std;
+
+int gcd(int a, int b)
+{
+    // a has to be greater than b, so we make sure of that
+    if (a < b)
+    {
+        int temp = a;
+        b = a;
+        a = temp;
+    }
+
+    if (b == 0)
+    {
+        return a;
+    }
+
+    return gcd(b, a % b);
+}
+
+int main(void)
+{
+
+    // finding the greatest common divisor
+
+    int x = 9;
+    int y = 6;
+
+    cout << gcd(781, 484) << endl;
+
+    return 0;
+}
+```
+
 ---
 
 ### 7. Fibonacci (Iterative)

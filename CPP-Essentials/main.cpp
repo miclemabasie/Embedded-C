@@ -2,35 +2,25 @@
 
 using namespace std;
 
-void countNumbers(int n)
+int fib(unsigned int n)
 {
-    n < 0 ? n *= -1 : n;
-    int nextN = 0;
-    cout << "counting" << endl;
-    while (n != 0)
+    int a = 0;
+    int b = 1;
+    int nextTerm;
+    for (int i = 1; i < n; i++)
     {
-        nextN += n % 10;
-        cout << n % 10;
-        n /= 10;
-        if (n == 0 && nextN >= 10)
-        {
-            cout << "=" << nextN << " → ";
-            n = nextN;
-            nextN = 0;
-        }
-        else
-        {
-            cout << ((n == 0) ? "=" : "+");
-        }
+        nextTerm = a + b;
+        a = b;
+        b = nextTerm;
     }
-    cout << nextN << endl;
+    // return fib(n - 1) + fib(n - 2);
+    return b;
 }
 
 int main(void)
 {
-    unsigned int n;
-    // cout << "Enter a number: ";
-    // cin >> n;
-    countNumbers(9875);
+
+    // finding the greatest common divisor
+    cout << fib(10) << endl;
     return 0;
 }
