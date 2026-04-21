@@ -83,13 +83,6 @@ int main(void)
 ### 3. Count Digits
 
 Given an integer, count how many digits it has (ignore sign).
-
----
-
-### 4. Sum of Digits Until Single Digit
-
-Keep summing digits until one digit remains.
-Example: `9875 → 9+8+7+5=29 → 2+9=11 → 1+1=2`
 ```c
 int countDigit(int n)
 {
@@ -105,10 +98,32 @@ int countDigit(int n)
 ```
 ---
 
+### 4. Sum of Digits Until Single Digit
+
+Keep summing digits until one digit remains.
+Example: `9875 → 9+8+7+5=29 → 2+9=11 → 1+1=2`
+
+---
+
 ### 5. Prime Number Check
 
 Check if a number is prime efficiently (not brute force to n).
-
+```c
+int isPrime(int n)
+{
+    // return 0 if false and 1 if true
+    int isPrime = 0;
+    for (int i = 2; i < n; i++)
+    {
+        if (n % i == 0)
+        {
+            isPrime = 1;
+            break;
+        };
+    }
+    return isPrime;
+}
+```
 ---
 
 ### 6. Find GCD (Greatest Common Divisor)

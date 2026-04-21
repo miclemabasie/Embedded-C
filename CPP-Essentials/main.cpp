@@ -2,35 +2,19 @@
 
 using namespace std;
 
-int countDigit(int n)
+int isPrime(int n)
 {
-
-    int count = 0;
-    while (n != 0)
+    // return 0 if false and 1 if true
+    int isPrime = 0;
+    for (int i = 2; i < n; i++)
     {
-        n /= 10;
-        count++;
-    };
-    return count;
-}
-
-int reverseANumber(int n)
-{
-    int rev = 0;
-    int lastDigit;
-
-    while (n != 0)
-    {
-        // get the last number from n
-        lastDigit = n % 10;
-        // get current reverse increase by 10 and add the last digit
-        rev = rev * 10 + lastDigit;
-        n = n / 10;
-    };
-
-    // cout << "The Reverse of " << n << "is: " << rev << endl;
-
-    return rev;
+        if (n % i == 0)
+        {
+            isPrime = 1;
+            break;
+        };
+    }
+    return isPrime;
 }
 
 int main(void)
@@ -39,9 +23,6 @@ int main(void)
     cout << "Enter a number: ";
     cin >> n;
 
-    // cout << ((reverseANumber(n) == n) ? "Yes" : "No") << endl;
-
-    cout << "Total digits are: " << countDigit(n) << endl;
-
+    cout << ((isPrime(n) == 0) ? "Number is not prime" : "Number is Prime") << endl;
     return 0;
 }
