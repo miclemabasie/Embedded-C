@@ -90,6 +90,7 @@ Given an integer, count how many digits it has (ignore sign).
 
 Keep summing digits until one digit remains.
 Example: `9875 → 9+8+7+5=29 → 2+9=11 → 1+1=2`
+```c
 int countDigit(int n)
 {
 
@@ -101,6 +102,7 @@ int countDigit(int n)
     };
     return count;
 }
+```
 ---
 
 ### 5. Prime Number Check
