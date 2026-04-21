@@ -43,7 +43,41 @@ int main(void)
 
 Check if a number reads the same forward and backward.
 Example: `121 → true`, `123 → false`
+```c
+#include <iostream>
 
+using namespace std;
+
+int reverseANumber(int n)
+{
+    int rev = 0;
+    int lastDigit;
+
+    while (n != 0)
+    {
+        // get the last number from n
+        lastDigit = n % 10;
+        // get current reverse increase by 10 and add the last digit
+        rev = rev * 10 + lastDigit;
+        n = n / 10;
+    };
+
+    // cout << "The Reverse of " << n << "is: " << rev << endl;
+
+    return rev;
+}
+
+int main(void)
+{
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    cout << ((reverseANumber(n) == n) ? "Yes" : "No") << endl;
+
+    return 0;
+}
+```
 ---
 
 ### 3. Count Digits
@@ -56,7 +90,17 @@ Given an integer, count how many digits it has (ignore sign).
 
 Keep summing digits until one digit remains.
 Example: `9875 → 9+8+7+5=29 → 2+9=11 → 1+1=2`
+int countDigit(int n)
+{
 
+    int count = 0;
+    while (n != 0)
+    {
+        n /= 10;
+        count++;
+    };
+    return count;
+}
 ---
 
 ### 5. Prime Number Check

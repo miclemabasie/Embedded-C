@@ -2,14 +2,22 @@
 
 using namespace std;
 
-int main(void)
+int countDigit(int n)
 {
 
-    int n;
+    int count = 0;
+    while (n != 0)
+    {
+        n /= 10;
+        count++;
+    };
+    return count;
+}
+
+int reverseANumber(int n)
+{
     int rev = 0;
     int lastDigit;
-    cout << "Enter a number: ";
-    cin >> n;
 
     while (n != 0)
     {
@@ -20,7 +28,20 @@ int main(void)
         n = n / 10;
     };
 
-    cout << "The Reverse of " << n << "is: " << rev << endl;
+    // cout << "The Reverse of " << n << "is: " << rev << endl;
+
+    return rev;
+}
+
+int main(void)
+{
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    // cout << ((reverseANumber(n) == n) ? "Yes" : "No") << endl;
+
+    cout << "Total digits are: " << countDigit(n) << endl;
 
     return 0;
 }
