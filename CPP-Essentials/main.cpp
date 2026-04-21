@@ -2,25 +2,41 @@
 
 using namespace std;
 
-int fib(unsigned int n)
+void swap(int a, int b)
 {
-    int a = 0;
-    int b = 1;
-    int nextTerm;
-    for (int i = 1; i < n; i++)
-    {
-        nextTerm = a + b;
-        a = b;
-        b = nextTerm;
-    }
-    // return fib(n - 1) + fib(n - 2);
-    return b;
+    return;
 }
 
 int main(void)
 {
 
-    // finding the greatest common divisor
-    cout << fib(10) << endl;
+    int arrSize = 15;
+    int arr[15] = {42, 7, 89, 23, 1, 56, 94, 12, 67, 3, 45, 78, 9, 31, 50};
+    int temp;
+
+    for (int i = 0; i < arrSize; i++)
+    {
+        // compare every element to its neighbor
+        for (int j = 0; j < arrSize - i - 1; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                // swap
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "[ ";
+
+    for (int i = 0; i < arrSize; i++)
+    {
+        cout << arr[i] << " ";
+    }
+
+    cout << " ]" << endl;
+
     return 0;
 }

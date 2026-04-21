@@ -244,18 +244,112 @@ int main(void)
 ### 8. Array Max & Min
 
 Take `n` numbers and find both max and min.
+```c
+#include <iostream>
 
+using namespace std;
+
+int main(void)
+{
+    int arrSize = 15;
+    int arr[15] = {42, 7, 89, 23, 1, 56, 94, 12, 67, 3, 45, 78, 9, 31, 50};
+
+    int min = arr[0];
+    int max = arr[arrSize - 1];
+    for (int i = 0; i < arrSize; i++)
+    {
+        if (arr[i] > max)
+            max = arr[i];
+        if (arr[i] < min)
+            min = arr[i];
+    }
+
+    cout << "max is: " << max << " and min is: " << min << endl;
+
+    return 0;
+}
+```
 ---
 
 ### 9. Count Even & Odd in Array
 
 Input array → count how many are even and how many are odd.
+```c
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+    int arrSize = 15;
+    int arr[15] = {42, 7, 89, 23, 1, 56, 94, 12, 67, 3, 45, 78, 9, 31, 50};
+
+    int evens = 0;
+    int odds = 0;
+    for (int i = 0; i < arrSize; i++)
+    {
+        if (arr[i] % 2 == 0) // even case
+            evens++;
+        else // odds
+            odds++;
+    }
+
+    cout << "odds are: " << odds << " and evens are: " << evens << endl;
+
+    return 0;
+}
+```
 
 ---
 
 ### 10. Simple Sorting (Bubble or Selection)
 
 Sort an array in ascending order manually (no STL sort).
+```c
+// Using Bubble sort
+#include <iostream>
+
+using namespace std;
+
+void swap(int a, int b)
+{
+    return;
+}
+
+int main(void)
+{
+
+    int arrSize = 15;
+    int arr[15] = {42, 7, 89, 23, 1, 56, 94, 12, 67, 3, 45, 78, 9, 31, 50};
+    int temp;
+
+    for (int i = 0; i < arrSize; i++)
+    {
+        // compare every element to its neighbor
+        for (int j = 0; j < arrSize - i - 1; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                // swap
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "[ ";
+
+    for (int i = 0; i < arrSize; i++)
+    {
+        cout << arr[i] << " ";
+    }
+
+    cout << " ]" << endl;
+
+    return 0;
+}
+```
 
 ---
 
