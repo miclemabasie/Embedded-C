@@ -10,12 +10,13 @@ When input ends, calculate the overall average by dividing the sum of the tank-b
 Important: The overall average requested here is the arithmetic mean of the individual tankful MPG values. It is different from combined fuel efficiency, which would divide the total miles by the total gallons.
 */
 #include <stdio.h>
+#include <stdint.h>
 
 
 int main(void) {
     float miles = 0;
     float gallons = 0;  
-    int count = 0;
+    uint8_t count = 0;
     float miles_per_gallon = 0;
     float total_miles_per_gallon = 0;
     while(miles != -1){
