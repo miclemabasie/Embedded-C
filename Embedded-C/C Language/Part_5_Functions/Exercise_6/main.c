@@ -5,31 +5,29 @@ Write a function that takes the time as three integer arguments (for hours, minu
 */
 
 #include <stdio.h>
+#include <stdint.h>
 
-unsigned int TimeSince12h(unsigned int hour, unsigned int minutes, unsigned int seconds);
+unsigned int TimeSince12H(uint32_t hour, uint32_t minutes, uint32_t seconds);
 
-int main( void )
+int main(void)
 {
-  unsigned int hour, minutes, seconds;
+  uint32_t hours, minutes, seconds;
+  printf("Enter Hour: ");
+  scanf("%d", &hours);
+  printf("Enter Minutes: ");
+  scanf("%d", &minutes);
+  printf("Enter Seconds: ");
+  scanf("%d", &seconds);
 
-  printf("Enter the hour: ");
-  scanf("%u", &hour);
-  printf("Enter the minutes: ");
-  scanf("%u", &minutes);
-  printf("Enter the seconds: ");
-  scanf("%u", &seconds);
+  printf("Total seconds passed since the clock struck 12, at %d:%d:%d: = %d Seconds\n", hours, minutes, seconds, TimeSince12H(hours, minutes, seconds));
 
-  TimeSince12h(hour,minutes,seconds);
-    
+  return 0;
 }
 
-unsigned int TimeSince12h(unsigned int hour, unsigned int minutes, unsigned int seconds)
+uint32_t TimeSince12H(uint32_t hour, uint32_t minutes, uint32_t seconds)
 {
-  int hourToSeconds, minutesToSeconds,totalseconds;
-
-  hourToSeconds = hour * 60 * 60;
-  minutesToSeconds = minutes * 60;
-  totalseconds = hourToSeconds + minutesToSeconds + seconds;
-
-  printf("%d seconds since the las time the clock struck 12\n",totalseconds);
+  uint32_t hours_to_seconds = (hour % 12) * 60 * 60;
+  uint32_t minutes_to_seconds = (minutes) * 60;
+  uint32_t total_seconds = hours_to_seconds + minutes_to_seconds + seconds;
+  return total_seconds;
 }
